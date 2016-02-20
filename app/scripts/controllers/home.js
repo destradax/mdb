@@ -1,3 +1,5 @@
 mdb.controller("HomeController", function ($scope) {
-	$scope.message = "Home Controller";
+	$scope.search = function () {
+		console.log("search: " + $scope.query);
+	};
 });
