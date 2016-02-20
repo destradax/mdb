@@ -96,9 +96,11 @@ module.exports = function (grunt) {
 				files: [
 					"Gruntfile.js",
 					".jshintrc",
+					"bower.json",
 					"<%= conf.app %>/scripts/**/*.js",
 					"<%= conf.app %>/styles/**/*.less",
 					"<%= conf.app %>/views/**/*.html",
+					"<%= conf.app %>/index.html",
 				],
 				tasks: ["build"]
 			},
