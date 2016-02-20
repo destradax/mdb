@@ -34,7 +34,10 @@ Frameworks / Tools minimum requirements:
 
 ### Design:
 
-You have been provided with a Home Page Design, you will need to build this page using HTML/CSS and matching the design as close as possible.
+You have been provided with a Home Page Design, you will need to build this page using HTML/CSS and matching the design as close as possible:
+
+![design_exported.png](design_exported.png)
+
 There is no need to style other pages other than using any CSS framwework you may want to use.
 
 
