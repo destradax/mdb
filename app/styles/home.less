@@ -1,7 +1,38 @@
-div.container {
-	padding-top: 20px;
-}
-
 header {
 	border-bottom: 1px solid black;
+}
+
+.movie-snippet {
+	max-width: 217px;
+	height: 300px;
+	border-bottom: 1px solid black;
+	float: left;
+	margin-right: 15px;
+	margin-top: 10px;
+
+	.image {
+		with: 217px;
+		height: 217px;
+		position: relative;
+
+		.rating {
+			color: #fff;
+			position: absolute;
+			right: 10px;
+			top: 10px;
+			padding: 5px 10px;
+			background-color: @orange;
+			font-size: 2em;
+		}
+	}
+
+	.description {
+		.title {
+			font-weight: bold;
+		}
+
+		.excerpt {
+			font-size: 0.9em;
+		}
+	}
 }

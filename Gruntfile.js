@@ -51,6 +51,12 @@ module.exports = function (grunt) {
 				cwd: "<%= conf.app %>/views",
 				src: "**/*.*",
 				dest: "<%= conf.dist %>/views"
+			},
+			images: {
+				expand: true,
+				cwd: "<%= conf.app %>/img",
+				src: "**/*.*",
+				dest: "<%= conf.dist %>/img"
 			}
 		},
 
@@ -85,7 +91,7 @@ module.exports = function (grunt) {
 		less: {
 			default: {
 				files: {
-					"<%= conf.dist %>/mdb.css": "<%= conf.app %>/styles/*.less"
+					"<%= conf.dist %>/mdb.css": "<%= conf.app %>/styles/styles.less"
 				}
 			}
 		},
