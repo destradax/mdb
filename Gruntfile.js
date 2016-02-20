@@ -7,7 +7,8 @@ module.exports = function (grunt) {
 	// Configurable paths for the application
 	var mdbConfig = {
 		app: "app",
-		dist: "dist"
+		dist: "dist",
+		bower: "bower_components"
 	};
 
 	// Define the configuration for all the tasks
@@ -16,6 +17,17 @@ module.exports = function (grunt) {
 		// Project settings
 		conf: mdbConfig,
 
+		// Copy bower dependencies
+		bower: {
+			default: {
+				options: {
+					expand: true
+				},
+				dest: "<%= conf.dist %>/<%= conf.bower %>"
+			}
+		},
+
+		// Remove dist directory
 		clean: {
 			default: ["<%= conf.dist %>"]
 		},
@@ -90,10 +102,20 @@ module.exports = function (grunt) {
 				],
 				tasks: ["build"]
 			},
+		},
+
+		// Autowire dependencies
+		wiredep: {
+			default: {
+				options: {
+					ignorePath: "../"
+				},
+				src: ["app/index.html"]
+			}
 		}
 	});
 
-	grunt.registerTask("build", ["clean", "jshint", "less", "copy", "concat"]);
+	grunt.registerTask("build", ["clean", "jshint", "less", "wiredep", "copy", "bower", "concat"]);
 
 	grunt.registerTask("default", ["build", "connect", "watch"]);
 };
