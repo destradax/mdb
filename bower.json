@@ -1,0 +1,21 @@
+{
+  "name": "mdb",
+  "description": "mdb - Movie Database",
+  "authors": [
+    "destradax"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/destradax/mdb",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "angular": "~1.4.8",
+    "angular-route": "~1.4.8"
+  }
+}
