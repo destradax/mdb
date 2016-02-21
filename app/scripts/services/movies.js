@@ -57,4 +57,15 @@ mdb.service("moviesService", function () {
 	this.get = function (movieId) {
 		return JSON.parse(localStorage.getItem("mdb:movies:" + movieId));
 	};
+
+	/**
+	 * @description Updates the given movie in the storage, merging the properties of the passed movie with the ones in the storage.
+	 * @param Object updatedMovie the movie with the updated properties.
+	 */
+	this.update = function (updatedMovie) {
+		var movie = this.get(updatedMovie.id) || {};
+		angular.extend(movie, updatedMovie);
+
+		this.save(movie);
+	};
 });
