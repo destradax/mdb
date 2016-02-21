@@ -28,6 +28,9 @@
 			</div>
 			<div class="form-group">
 				<label>Filmography</label>
+				<ul>
+					<li ng-repeat="movie in actor.movies"><a ng-href="#/movies/{{movie.id}}">{{movie.title}} - {{movie.releaseYear}}</a></li>
+				</ul>
 			</div>
 
 			<hr>
