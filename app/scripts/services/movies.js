@@ -17,4 +17,35 @@ mdb.service("moviesService", function () {
 			{id: 8, actors: [], director: 1, excerpt: "James Franco start in this new series as an adaptation of the King's time travel glorious story.", genres: [], grossIncome: 999, imgUrl: "img/blackadder.png", rating: 5, releaseYear: 1982, title: "Black Adder"}
 		];
 	};
+
+	/**
+	 * @description Returns an array with all the movies. If none are found, the sample movies are instantiated, saved to the storage and returned.
+	 * @returns Array the array of all the currently saved movies.
+	 */
+	this.getAll = function () {
+		var movies = [];
+
+		for (var key in localStorage){
+			if (/^mdb:movies:/.test(key)) {
+				movies.push(JSON.parse(localStorage.getItem(key)));
+			}
+		}
+
+		if (movies.length === 0) {
+			movies = this.getSampleMovies();
+			for (var movie of movies) {
+				this.save(movie);
+			}
+		}
+
+		return movies;
+	};
+
+	/**
+	 * @description Saves the given movie to the storage.
+	 * @param Object movie the movie to be saved.
+	 */
+	this.save = function (movie) {
+		localStorage.setItem("mdb:movies:" + movie.id, JSON.stringify(movie));
+	};
 });
