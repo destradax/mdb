@@ -9,8 +9,12 @@
 		<img ng-src="{{movie.imgUrl}}"/>
 		<div class="rating">
 			<span ng-hide="disableRating">Rate this movie:</span>
-			<select>
-			</select>
+				<select ng-hide="disableRating" ng-model="userRating" ng-change="rateMovie()" ng-disabled="disableRating">
+					<option ng-repeat="option in ratingOptions" value="{{option}}">{{option}}</option>
+				</select>
+				<div ng-show="disableRating">
+					Thanks for voting!
+				</div>
 		</div>
 	</div>
 
@@ -34,7 +38,7 @@
 			</div>
 			<div class="form-group">
 				<label for="movie-rating">Average rating</label>
-				<p class="form-control-static" id="movie-rating">{{movie.rating | number:1}}</p>
+				<p class="form-control-static" id="movie-rating">{{movie.rating | number:0}}</p>
 			</div>
 			<div class="form-group">
 				<label for="movie-genres">Genres</label>

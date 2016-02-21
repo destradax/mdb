@@ -1,7 +1,7 @@
 <a ng-href="#/movies/{{movie.id}}">
 	<div class="image">
 		<img ng-src="{{movie.imgUrl}}" alt="{{movie.imgUrl}}" />
-		<div class="rating">{{movie.rating}}</div>
+		<div class="rating">{{movie.rating | number:0}}</div>
 	</div>
 	<div class="description">
 		<div class="title">{{movie.title | uppercase}}</div>
