@@ -15,5 +15,9 @@ mdb.config(function ($routeProvider) {
 		controller: "MovieController",
 		templateUrl: "views/movies/view.html"
 	})
+	.when("/actors", {
+		controller: "ActorsController",
+		templateUrl: "views/actors/index.html"
+	})
 	.otherwise({redirectTo: "/"});
 });

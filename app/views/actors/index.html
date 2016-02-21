@@ -1,0 +1,32 @@
+<div id="actor-list">
+	<a href="#/actors/new" class="btn btn-success pull-right">
+		<span class="glyphicon glyphicon-plus" aria-hidden="true" /> Add Actor
+	</a>
+	<h2>Actor List</h2>
+
+	<form class="form">
+		<div class="form-group">
+			<input type="text" class="form-control" id="actor-name" placeholder="Filter actors" ng-model="actorFilter">
+		</div>
+	</form>
+
+	<table class="table table-striped table-hover">
+		<thead>
+			<tr>
+				<th>First name</th>
+				<th>Last name</th>
+				<th>Birth date</th>
+				<th>Movies</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="link" ng-repeat="actor in actors | filter:actorFilter" ng-click="showActor(actor.id)">
+				<td>{{actor.firstName}}</td>
+				<td>{{actor.lastName}}</td>
+				<td>{{actor.birthDate | date:shortDate}}</td>
+				<td>{{actor.movieIds.length}}</td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
