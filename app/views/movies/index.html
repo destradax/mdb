@@ -1,0 +1,33 @@
+<div id="movie-list">
+	<a href="#/movies/new" class="btn btn-success pull-right">
+		<span class="glyphicon glyphicon-plus" aria-hidden="true" /> Add Movie
+	</a>
+	<h2>Movie List</h2>
+
+	<form class="form">
+		<div class="form-group">
+			<input type="text" class="form-control" id="movie-name" placeholder="Filter movies" ng-model="movieFilter.title">
+		</div>
+	</form>
+
+	<table class="table table-striped table-hover movie-list">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Release Year</th>
+				<th>Gross Income</th>
+				<th>Director</th>
+				<th>Rating</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="movie in movies | filter:movieFilter" ng-click="seeMovie(movie.id)">
+				<td>{{movie.title}}</td>
+				<td>{{movie.releaseYear}}</td>
+				<td>{{movie.grossIncome}}</td>
+				<td>{{movie.director}}</td>
+				<td>{{movie.rating}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
