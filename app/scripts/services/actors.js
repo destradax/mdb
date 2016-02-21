@@ -70,4 +70,17 @@ mdb.service("actorsService", function () {
 
 		this.save(actor);
 	};
+
+	/**
+	 * @description Assigns the id property to the given actor and saves it to the storage.
+	 * @param Object newActor the actor object that will be saved.
+	 */
+	this.add = function (newActor) {
+		var actors = this.getAll();
+
+		newActor.id =  actors[actors.length - 1].id + 1;
+		newActor.movieIds = [];
+
+		this.save(newActor);
+	};
 });

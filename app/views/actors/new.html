@@ -1,0 +1,23 @@
+<h2>Add an actor</h2>
+<form class="form" ng-submit="addActor()" name="form">
+	<div class="form-group">
+		<label for="new-actor-first-name">First Name *</label>
+		<input type="text" class="form-control" id="new-actor-first-name" placeholder="Actor's first name" ng-model="newActor.firstName" required>
+	</div>
+	<div class="form-group">
+		<label for="new-actor-last-name">Last Name</label>
+		<input type="text" class="form-control" id="new-actor-last-name" placeholder="Actor's last name" ng-model="newActor.lastName">
+	</div>
+	<div class="form-group">
+		<label for="new-actor-birth-date">Birth Date</label>
+		<input type="date" class="form-control" id="new-actor-birth-date" ng-model="newActor.birthDate">
+	</div>
+	<div class="form-group">
+		<label for="new-actor-img">Image URL</label>
+		<input type="text" class="form-control" id="new-actor-img" placeholder="Image URL" ng-model="newActor.imgUrl">
+	</div>
+
+	<button type="submit" class="btn btn-success pull-right" ng-disabled="form.$invalid">
+		<span class="glyphicon glyphicon-ok" aria-hidden="true" /> Save
+	</button>
+</form>
