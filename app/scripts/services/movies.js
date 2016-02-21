@@ -114,4 +114,18 @@ mdb.service("moviesService", function () {
 	this.delete = function (movie) {
 		localStorage.removeItem("mdb:movies:" + movie.id);
 	};
+
+	/**
+	 * @description Removes an actor from all the movies.
+	 * @param Number actorId the id of the actor that will be removed.
+	 */
+	this.removeActorFromAllMovies = function (actorId) {
+		// Find all the movies that contain the given actor.
+		var movies = this.getAll().filter(function (movie) {
+			return movie.actorIds.indexOf(actorId) !== -1;
+		});
+		for (var movie of movies) {
+			this.removeActor(movie, actorId);
+		}
+	};
 });

@@ -25,10 +25,8 @@ mdb.controller("MovieController", function ($scope, $routeParams, moviesService,
 	 * @description Retrieves the information for each of the actor ids associated to this movie.
 	 */
 	var fetchMovieActors = function () {
-		console.log("in");
 		$scope.movie.actors = [];
 		for (var actorId of $scope.movie.actorIds) {
-			console.log(actorId);
 			$scope.movie.actors.push(actorsService.get(actorId));
 		}
 	};

@@ -125,4 +125,12 @@ mdb.service("actorsService", function () {
 			this.removeMovie(actor.id, movieId);
 		}
 	};
+
+	/**
+	 * @description removes the given actor from the storage.
+	 * @param Object actor the actor that will be removed.
+	 */
+	this.delete = function (actor) {
+		localStorage.removeItem("mdb:actors:" + actor.id);
+	};
 });

@@ -19,4 +19,13 @@ mdb.controller("ActorController", function ($scope, $routeParams, actorsService,
 		}
 	};
 	fetchActorMovies();
+
+	/**
+	 * @description Deletes the current actor from the storage and redirects to the actor listing page.
+	 */
+	$scope.deleteActor = function () {
+		moviesService.removeActorFromAllMovies($scope.actor.id);
+		actorsService.delete($scope.actor);
+		$location.path("/actors");
+	};
 });
