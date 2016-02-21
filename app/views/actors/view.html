@@ -24,7 +24,14 @@
 			</div>
 			<div class="form-group">
 				<label for="actor-img">Image URL</label>
-				<input type="text" class="form-control" id="actor-img" placeholder="Image URL" ng-model="actor.imgUrl">
+				<div class="input-group">
+					<input type="text" id="actor-img" class="form-control" ng-model="actor.imgUrl">
+					<span class="input-group-btn">
+						<span class="btn btn-primary btn-file">
+							Browse&hellip; <input type="file" file-reader="actor.imgUrl">
+						</span>
+					</span>
+				</div>
 			</div>
 			<div class="form-group">
 				<label>Filmography</label>
