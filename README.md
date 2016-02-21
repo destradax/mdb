@@ -1,6 +1,14 @@
 # mdb
 Movie database application
 
+## Running
+
+1. Make sure you have [Node.js](https://nodejs.org/en/) installed and working.
+2. Run `npm start`.
+3. Wait for Node and Bower to download the required dependencies and build the application.
+4. A web server will start on port `8000`.
+5. A new tab should open in your default browser. If it does not go to http://localhost:8000.
+
 ## Specs
 Create a JS App which provides following functionality
 
