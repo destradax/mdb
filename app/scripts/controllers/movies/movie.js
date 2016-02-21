@@ -33,4 +33,13 @@ mdb.controller("MovieController", function ($scope, $routeParams, moviesService,
 		}
 	};
 	fetchMovieActors();
+
+	/**
+	 * @description Deletes the current movie from the storage and redirects to the movie listing page.
+	 */
+	$scope.deleteMovie = function () {
+		actorsService.removeMovieFromAllActors($scope.movie.id);
+		moviesService.delete($scope.movie);
+		$location.path("/movies");
+	};
 });

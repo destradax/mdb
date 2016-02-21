@@ -111,4 +111,18 @@ mdb.service("actorsService", function () {
 			}
 		}
 	};
+
+	/**
+	 * @description Removes an movie from all the actors.
+	 * @param Number movieId the id of the movie that will be removed.
+	 */
+	this.removeMovieFromAllActors = function (movieId) {
+		// Find all the actors that participated in the given movie.
+		var actors = this.getAll().filter(function (actor) {
+			return actor.movieIds.indexOf(movieId) !== -1;
+		});
+		for (var actor of actors) {
+			this.removeMovie(actor.id, movieId);
+		}
+	};
 });

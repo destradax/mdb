@@ -106,4 +106,12 @@ mdb.service("moviesService", function () {
 			}
 		}
 	};
+
+	/**
+	 * @description removes the given movie from the storage.
+	 * @param Object movie the movie that will be removed.
+	 */
+	this.delete = function (movie) {
+		localStorage.removeItem("mdb:movies:" + movie.id);
+	};
 });
