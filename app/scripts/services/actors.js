@@ -133,4 +133,16 @@ mdb.service("actorsService", function () {
 	this.delete = function (actor) {
 		localStorage.removeItem("mdb:actors:" + actor.id);
 	};
+
+	/**
+	 * @description Deletes all the movies and recreates the fixtures.
+	 */
+	this.reset = function () {
+		for (var key in localStorage){
+			if (/^mdb:actors:/.test(key)) {
+				localStorage.removeItem(key);
+			}
+		}
+		this.getAll();
+	};
 });

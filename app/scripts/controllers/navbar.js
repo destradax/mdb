@@ -1,4 +1,4 @@
-mdb.controller("NavbarController", function ($scope, $location) {
+mdb.controller("NavbarController", function ($scope, $location, moviesService, actorsService) {
 	$scope.menus = [
 		{
 			url: "/movies",
@@ -19,6 +19,15 @@ mdb.controller("NavbarController", function ($scope, $location) {
 	 */
 	$scope.isActive = function (menu) {
 		return $location.path().indexOf(menu.url) === 0;
+	};
+
+	/**
+	 * @description Deletes all the movies and actors, recreates the fixtures and navigates to the home page.
+	 */
+	$scope.resetApp = function () {
+		moviesService.reset();
+		actorsService.reset();
+		$location.path("/");
 	};
 
 });

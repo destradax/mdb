@@ -166,4 +166,16 @@ mdb.service("moviesService", function () {
 
 		return relatedMovies;
 	};
+
+	/**
+	 * @description Deletes all the movies and recreates the fixtures.
+	 */
+	this.reset = function () {
+		for (var key in localStorage){
+			if (/^mdb:movies:/.test(key)) {
+				localStorage.removeItem(key);
+			}
+		}
+		this.getAll();
+	};
 });
