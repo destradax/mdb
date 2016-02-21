@@ -108,7 +108,7 @@ mdb.service("moviesService", function () {
 	};
 
 	/**
-	 * @description removes the given movie from the storage.
+	 * @description Removes the given movie from the storage.
 	 * @param Object movie the movie that will be removed.
 	 */
 	this.delete = function (movie) {
@@ -140,5 +140,30 @@ mdb.service("moviesService", function () {
 			return b.id - a.id;
 		}).slice(0, quantity);
 		return movies;
+	};
+
+	/**
+	 * @description Finds all the movies that have at least one common genre element with the given movie.
+	 * @param Movie movie The movie whose relatives we're looking for.
+	 * @returns Array The array of the related movies.
+	 */
+	this.getRelatedMovies = function (movie) {
+
+		var allMovies = this.getAll();
+		var relatedMovies = [];
+
+		for (var relatedMovie of allMovies) {
+			if (relatedMovie.id === movie.id) {
+				continue;
+			}
+			for (var genre of relatedMovie.genres) {
+				if (movie.genres.includes(genre)) {
+					relatedMovies.push(relatedMovie);
+					break;
+				}
+			}
+		}
+
+		return relatedMovies;
 	};
 });

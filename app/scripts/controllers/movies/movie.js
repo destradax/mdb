@@ -5,6 +5,8 @@ mdb.controller("MovieController", function ($scope, $routeParams, moviesService,
 	$scope.ratingOptions = [10,20,30,40,50,60,70,80,90,100].reverse();
 	$scope.disableRating = false;
 
+	$scope.relatedMovies = moviesService.getRelatedMovies($scope.movie);
+
 	/**
 	 * @description Updates the current properties of the movie in the storage and redirects to the movie listing page.
 	 */
@@ -41,5 +43,13 @@ mdb.controller("MovieController", function ($scope, $routeParams, moviesService,
 		actorsService.removeMovieFromAllActors($scope.movie.id);
 		moviesService.delete($scope.movie);
 		$location.path("/movies");
+	};
+
+	/**
+	 * @description Checks if the current movie has related movies.
+	 * @returns Boolean true if the current movie has related movies, false otherwise.
+	 */
+	$scope.hasRelatedMovies = function () {
+		return $scope.relatedMovies.length > 0;
 	};
 });

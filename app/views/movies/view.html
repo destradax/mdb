@@ -60,6 +60,17 @@
 				<textarea class="form-control" id="movie-exceprt" placeholder="Excerpt" ng-model="movie.excerpt" />
 			</div>
 			<div class="form-group">
+				<label>Related Movies</label>
+				<ul ng-show="hasRelatedMovies()">
+					<li ng-repeat="related in relatedMovies"><a ng-href="#/movies/{{related.id}}">{{related.title}}</a></li>
+				</ul>
+				<div ng-hide="hasRelatedMovies()">
+					There are no related movies
+				</div>
+			</div>
+
+			<hr>
+			<div class="form-group">
 				<label>Cast</label>
 				<a href="#/movies/{{movie.id}}/cast" class="btn btn-info pull-right">
 					<span class="glyphicon glyphicon-pencil" aria-hidden="true" /> Edit Cast
