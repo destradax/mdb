@@ -6,6 +6,6 @@ mdb.controller("MovieController", function ($scope, $routeParams, moviesService,
 	 */
 	$scope.updateMovie = function () {
 		moviesService.update($scope.movie);
-		$location.path( "/" );
+		$location.path("/movies");
 	};
 });
