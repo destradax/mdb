@@ -19,6 +19,10 @@ mdb.config(function ($routeProvider) {
 		controller: "MovieController",
 		templateUrl: "views/movies/view.html"
 	})
+	.when("/movies/:movieId/cast", {
+		controller: "MovieCastController",
+		templateUrl: "views/movies/cast.html"
+	})
 	.when("/actors", {
 		controller: "ActorsController",
 		templateUrl: "views/actors/index.html"

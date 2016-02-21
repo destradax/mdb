@@ -81,4 +81,29 @@ mdb.service("moviesService", function () {
 
 		this.save(newMovie);
 	};
+
+	/**
+	 * @description Adds an actor to the movie.
+	 * @param Object movie the movie which the actor will be added to.
+	 * @param Number actorId the id of the actor that will be added to the movie.
+	 */
+	this.addActor = function (movie, actorId) {
+		movie.actorIds.push(actorId);
+		this.update(movie);
+	};
+
+	/**
+	 * @description Removes an actor from the movie.
+	 * @param Object movie the movie which the actor will be removed from.
+	 * @param Number actorId the id of the actor that will be removed from the movie.
+	 */
+	this.removeActor = function (movie, actorId) {
+		for (var i = 0; i < movie.actorIds.length; i++) {
+			if (movie.actorIds[i] === actorId) {
+				movie.actorIds.splice(i,1);
+				this.update(movie);
+				break;
+			}
+		}
+	};
 });

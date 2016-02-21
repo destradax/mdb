@@ -84,4 +84,31 @@ mdb.service("actorsService", function () {
 
 		this.save(newActor);
 	};
+
+	/**
+	 * @description Adds a movie to the actor's filmography.
+	 * @param Number actorId the id of the actor where the movie will be added.
+	 * @param Number movieId the id of the movie that will be added to the actor.
+	 */
+	this.addMovie = function (actorId, movieId) {
+		var actor = this.get(actorId);
+		actor.movieIds.push(movieId);
+		this.update(actor);
+	};
+
+	/**
+	 * @description Removes a movie from the actor's filmography.
+	 * @param Number actorId the id of the actor the movie will be removed from.
+	 * @param Number movieId the id of the movie that will be removed from the actor.
+	 */
+	this.removeMovie = function (actorId, movieId) {
+		var actor = this.get(actorId);
+		for (var i = 0; i < actor.movieIds.length; i++) {
+			if (actor.movieIds[i] === movieId) {
+				actor.movieIds.splice(i,1);
+				this.update(actor);
+				break;
+			}
+		}
+	};
 });
