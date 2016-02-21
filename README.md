@@ -19,10 +19,10 @@ Should Allow the User to:
 - See list of recent movies on home page.
 
 #### Movie
-    information: Name, release year, gross income, Actors, director name, rating, Genre (multiple, comma separated)
+information: Name, release year, gross income, Actors, director name, rating, Genre (multiple, comma separated)
 
 #### Actor
-    information: First name, Last name, gender, birth date, Movies
+information: First name, Last name, gender, birth date, Movies
 
 
 Frameworks / Tools minimum requirements:
