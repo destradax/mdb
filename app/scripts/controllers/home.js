@@ -1,6 +1,7 @@
 mdb.controller("HomeController", function ($scope) {
 	$scope.movies = [
 		{
+			id: 1,
 			actors: [],
 			director: 1,
 			excerpt: "James Franco start in this new series as an adaptation of the King's time travel glorious story.",
@@ -12,6 +13,7 @@ mdb.controller("HomeController", function ($scope) {
 			title: "The Godfather II"
 		},
 		{
+			id: 2,
 			actors: [],
 			director: 1,
 			excerpt: "James Franco start in this new series as an adaptation of the King's time travel glorious story.",
@@ -23,6 +25,7 @@ mdb.controller("HomeController", function ($scope) {
 			title: "Saving Private Ryan"
 		},
 		{
+			id: 3,
 			actors: [],
 			director: 1,
 			excerpt: "James Franco start in this new series as an adaptation of the King's time travel glorious story.",
@@ -34,6 +37,7 @@ mdb.controller("HomeController", function ($scope) {
 			title: "The Butterfly Effect"
 		},
 		{
+			id: 4,
 			actors: [],
 			director: 1,
 			excerpt: "James Franco start in this new series as an adaptation of the King's time travel glorious story.",
@@ -45,6 +49,7 @@ mdb.controller("HomeController", function ($scope) {
 			title: "Fight Club"
 		},
 		{
+			id: 5,
 			actors: [],
 			director: 1,
 			excerpt: "James Franco start in this new series as an adaptation of the King's time travel glorious story.",
@@ -56,6 +61,7 @@ mdb.controller("HomeController", function ($scope) {
 			title: "The Godfather"
 		},
 		{
+			id: 6,
 			actors: [],
 			director: 1,
 			excerpt: "James Franco start in this new series as an adaptation of the King's time travel glorious story.",
@@ -67,6 +73,7 @@ mdb.controller("HomeController", function ($scope) {
 			title: "Better Call Saul"
 		},
 		{
+			id: 7,
 			actors: [],
 			director: 1,
 			excerpt: "James Franco start in this new series as an adaptation of the King's time travel glorious story.",
@@ -78,6 +85,7 @@ mdb.controller("HomeController", function ($scope) {
 			title: "Street Fighter V"
 		},
 		{
+			id: 8,
 			actors: [],
 			director: 1,
 			excerpt: "James Franco start in this new series as an adaptation of the King's time travel glorious story.",

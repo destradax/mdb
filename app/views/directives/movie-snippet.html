@@ -1,4 +1,4 @@
-<div class="movie-snippet">
+<a ng-href="#/movies/{{movie.id}}" class="movie-snippet">
 	<div class="image">
 		<img ng-src="{{movie.imgUrl}}" alt="{{movie.imgUrl}}" />
 		<div class="rating">{{movie.rating}}</div>
@@ -7,4 +7,4 @@
 		<div class="title">{{movie.title | uppercase}}</div>
 		<div class="excerpt">{{movie.excerpt}}</div>
 	</div>
-</div>
+</a>
