@@ -1,5 +1,6 @@
 mdb.controller("MovieController", function ($scope, $routeParams, moviesService, actorsService, $location) {
 	$scope.movie = moviesService.get(Number($routeParams.movieId));
+	$scope.genreString = $scope.movie.genres.join(", ");
 
 	$scope.ratingOptions = [10,20,30,40,50,60,70,80,90,100].reverse();
 	$scope.disableRating = false;
@@ -8,6 +9,7 @@ mdb.controller("MovieController", function ($scope, $routeParams, moviesService,
 	 * @description Updates the current properties of the movie in the storage and redirects to the movie listing page.
 	 */
 	$scope.updateMovie = function () {
+		$scope.movie.genres = $scope.genreString.split(", ");
 		moviesService.update($scope.movie);
 		$location.path("/movies");
 	};
