@@ -11,64 +11,14 @@
 </header>
 
 <main>
-	<div class="movie-snippet">
+	<div class="movie-snippet" ng-repeat="movie in movies">
 		<div class="image">
-			<img src="img/godfather2.png" alt="godfather2.png" />
-			<div class="rating">89</div>
+			<img ng-src="{{movie.imgUrl}}" alt="{{movie.imgUrl}}" />
+			<div class="rating">{{movie.rating}}</div>
 		</div>
 		<div class="description">
-			<div class="title">
-				THE GODFATHER II
-			</div>
-			<div class="excerpt">
-				James Franco start in this new series as an adaptation of the kin's time travel glorious story.
-			</div>
+			<div class="title">{{movie.title | uppercase}}</div>
+			<div class="excerpt">{{movie.excerpt}}</div>
 		</div>
 	</div>
-
-	<div class="movie-snippet">
-		<div class="image">
-			<img src="img/savingprivateryan.png" alt="savingprivateryan.png" />
-			<div class="rating">64</div>
-		</div>
-		<div class="description">
-			<div class="title">
-				SAVING PRIVATE RYAN
-			</div>
-			<div class="excerpt">
-				James Franco start in this new series as an adaptation of the kin's time travel glorious story.
-			</div>
-		</div>
-	</div>
-
-	<div class="movie-snippet">
-		<div class="image">
-			<img src="img/butterflyeffect.png" alt="butterflyeffect.png" />
-			<div class="rating">43</div>
-		</div>
-		<div class="description">
-			<div class="title">
-				THE BUTTERFLY EFFECT
-			</div>
-			<div class="excerpt">
-				James Franco start in this new series as an adaptation of the kin's time travel glorious story.
-			</div>
-		</div>
-	</div>
-
-	<div class="movie-snippet">
-		<div class="image">
-			<img src="img/fightclub.png" alt="fightclub.png" />
-			<div class="rating">21</div>
-		</div>
-		<div class="description">
-			<div class="title">
-				FIGHT CLUB
-			</div>
-			<div class="excerpt">
-				James Franco start in this new series as an adaptation of the kin's time travel glorious story.
-			</div>
-		</div>
-	</div>
-
 </main>
