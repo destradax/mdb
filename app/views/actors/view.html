@@ -9,7 +9,7 @@
 		<img ng-src="{{actor.imgUrl}}"/>
 	</div>
 	<div class="col-md-9">
-		<form class="form" name="form">
+		<form class="form" name="form" ng-submit="updateActor()">
 			<div class="form-group">
 				<label for="actor-first-name">First Name *</label>
 				<input type="text" class="form-control" id="actor-first-name" placeholder="Actor's first name" ng-model="actor.firstName" required>

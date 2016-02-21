@@ -59,4 +59,15 @@ mdb.service("actorsService", function () {
 		actor.birthDate = new Date(actor.birthDate);
 		return actor;
 	};
+
+	/**
+	 * @description Updates the given actor in the storage, merging the properties of the passed actor with the ones in the storage.
+	 * @param Object updatedActor the actor with the updated properties.
+	 */
+	this.update = function (updatedActor) {
+		var actor = this.get(updatedActor.id) || {};
+		angular.extend(actor, updatedActor);
+
+		this.save(actor);
+	};
 });
