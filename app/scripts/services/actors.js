@@ -48,4 +48,15 @@ mdb.service("actorsService", function () {
 	this.save = function (actor) {
 		localStorage.setItem("mdb:actors:" + actor.id, JSON.stringify(actor));
 	};
+
+	/**
+	 * @description Finds and returns the actor whose equals to the one given.
+	 * @param Number actorId the id of the actor we're searching for.
+	 * @returns Object the actor object or null if no actor is found with the given id.
+	 */
+	this.get = function (actorId) {
+		var actor = JSON.parse(localStorage.getItem("mdb:actors:" + actorId));
+		actor.birthDate = new Date(actor.birthDate);
+		return actor;
+	};
 });

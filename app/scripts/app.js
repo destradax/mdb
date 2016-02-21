@@ -19,5 +19,9 @@ mdb.config(function ($routeProvider) {
 		controller: "ActorsController",
 		templateUrl: "views/actors/index.html"
 	})
+	.when("/actors/:actorId", {
+		controller: "ActorController",
+		templateUrl: "views/actors/view.html"
+	})
 	.otherwise({redirectTo: "/"});
 });
