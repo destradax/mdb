@@ -3,7 +3,7 @@ mdb.service("moviesService", function () {
 
 	/**
 	 * @description Returns an array with fixture movies.
-	 * @returns Array the array of sample movies
+	 * @returns Array the array of sample movies.
 	 */
 	this.getSampleMovies = function () {
 		return [
@@ -127,5 +127,18 @@ mdb.service("moviesService", function () {
 		for (var movie of movies) {
 			this.removeActor(movie, actorId);
 		}
+	};
+
+	/**
+	 * @description Returns an array with the latest movies (highest IDs).
+	 * @param Number quantity the number of movies to return.
+	 * @returns Array the array of the most recent movies.
+	 */
+	this.getRecentMovies = function (quantity) {
+		// Find all the movies, sort them by id (desc), and return only the first <quantity>.
+		var movies = this.getAll().sort(function (a,b) {
+			return b.id - a.id;
+		}).slice(0, quantity);
+		return movies;
 	};
 });
