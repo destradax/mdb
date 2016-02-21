@@ -1,4 +1,4 @@
-mdb.controller("MovieController", function ($scope, $routeParams, moviesService, $location) {
+mdb.controller("MovieController", function ($scope, $routeParams, moviesService, actorsService, $location) {
 	$scope.movie = moviesService.get(Number($routeParams.movieId));
 
 	$scope.ratingOptions = [10,20,30,40,50,60,70,80,90,100].reverse();
@@ -20,4 +20,17 @@ mdb.controller("MovieController", function ($scope, $routeParams, moviesService,
 		moviesService.update($scope.movie);
 		$scope.disableRating = true;
 	};
+
+	/**
+	 * @description Retrieves the information for each of the actor ids associated to this movie.
+	 */
+	var fetchMovieActors = function () {
+		console.log("in");
+		$scope.movie.actors = [];
+		for (var actorId of $scope.movie.actorIds) {
+			console.log(actorId);
+			$scope.movie.actors.push(actorsService.get(actorId));
+		}
+	};
+	fetchMovieActors();
 });
