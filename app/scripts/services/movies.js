@@ -48,4 +48,13 @@ mdb.service("moviesService", function () {
 	this.save = function (movie) {
 		localStorage.setItem("mdb:movies:" + movie.id, JSON.stringify(movie));
 	};
+
+	/**
+	 * @description Finds and returns the movie whose equals to the one given.
+	 * @param Number movieId the id of the movie we're searching for.
+	 * @returns Object the movie object or null if no movie is found with the given id.
+	 */
+	this.get = function (movieId) {
+		return JSON.parse(localStorage.getItem("mdb:movies:" + movieId));
+	};
 });

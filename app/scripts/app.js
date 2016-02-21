@@ -7,5 +7,9 @@ mdb.config(function ($routeProvider) {
 		controller: "HomeController",
 		templateUrl: "views/home.html"
 	})
+	.when("/movies/:movieId", {
+		controller: "MovieController",
+		templateUrl: "views/movies/view.html"
+	})
 	.otherwise({redirectTo: "/"});
 });
