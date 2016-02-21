@@ -1,12 +1,12 @@
-<div class="row">
+<header class="row">
 	<div class="col-md-12">
 		<h2 class="title">{{movie.title}}</h2>
 	</div>
-</div>
+</header>
 <hr>
-<div class="row">
+<main class="row">
 	<div class="col-md-3">
-		<img ng-src="{{movie.imgUrl}}"/>
+		<img class="profile-pic" ng-src="{{movie.imgUrl}}"/>
 		<div class="rating">
 			<span ng-hide="disableRating">Rate this movie:</span>
 				<select ng-hide="disableRating" ng-model="userRating" ng-change="rateMovie()" ng-disabled="disableRating">
@@ -56,8 +56,8 @@
 				</div>
 			</div>
 			<div class="form-group">
-				<label for="movie-exceprt">Excerpt</label>
-				<textarea class="form-control" id="movie-exceprt" placeholder="Excerpt" ng-model="movie.excerpt" />
+				<label for="movie-excerpt">Excerpt</label>
+				<textarea class="form-control" id="movie-excerpt" placeholder="Excerpt" ng-model="movie.excerpt" />
 			</div>
 			<div class="form-group">
 				<label>Related Movies</label>
@@ -89,4 +89,4 @@
 			</button>
 		</form>
 	</div>
-</div>
+</main>

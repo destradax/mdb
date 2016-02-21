@@ -18,7 +18,11 @@ mdb.controller("MovieController", function ($scope, $routeParams, moviesService,
 	 * @description Updates this movie's average rating with the user rating. Disables the rating select box to allow only one rating per visit.
 	 */
 	$scope.rateMovie = function () {
-		$scope.movie.rating = ($scope.movie.rating + Number($scope.userRating)) / 2;
+		if ($scope.movie.rating === 0) {
+			$scope.movie.rating = $scope.userRating;
+		} else {
+			$scope.movie.rating = ($scope.movie.rating + Number($scope.userRating)) / 2;
+		}
 		moviesService.update($scope.movie);
 		$scope.disableRating = true;
 	};

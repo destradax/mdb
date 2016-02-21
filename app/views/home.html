@@ -1,4 +1,4 @@
-<header>
+<header class="home-header">
 	<span class="h1">JS MOVIE APP</span>
 	<form class="form-inline pull-right" ng-submit="search()">
 		<div class="input-group">
@@ -7,9 +7,9 @@
 				<button class="btn btn-default" type="submit">Go!</button>
 			</span>
 		</div>
-</form>
+	</form>
 </header>
 
-<main>
+<main class="home-main">
 	<movie-snippet movie="movie" ng-repeat="movie in movies"></movie-snippet>
 </main>

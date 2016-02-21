@@ -1,23 +1,39 @@
-<h2>Add an actor</h2>
-<form class="form" ng-submit="addActor()" name="form">
-	<div class="form-group">
-		<label for="new-actor-first-name">First Name *</label>
-		<input type="text" class="form-control" id="new-actor-first-name" placeholder="Actor's first name" ng-model="newActor.firstName" required>
-	</div>
-	<div class="form-group">
-		<label for="new-actor-last-name">Last Name</label>
-		<input type="text" class="form-control" id="new-actor-last-name" placeholder="Actor's last name" ng-model="newActor.lastName">
-	</div>
-	<div class="form-group">
-		<label for="new-actor-birth-date">Birth Date</label>
-		<input type="date" class="form-control" id="new-actor-birth-date" ng-model="newActor.birthDate">
-	</div>
-	<div class="form-group">
-		<label for="new-actor-img">Image URL</label>
-		<input type="text" class="form-control" id="new-actor-img" placeholder="Image URL" ng-model="newActor.imgUrl">
-	</div>
+<main>
+	<h2>Add an actor</h2>
+	<form class="form" ng-submit="addActor()" name="form">
+		<div class="form-group">
+			<label for="new-actor-first-name">First Name *</label>
+			<input type="text" class="form-control" id="new-actor-first-name" placeholder="Actor's first name" ng-model="newActor.firstName" required>
+		</div>
+		<div class="form-group">
+			<label for="new-actor-last-name">Last Name</label>
+			<input type="text" class="form-control" id="new-actor-last-name" placeholder="Actor's last name" ng-model="newActor.lastName">
+		</div>
+		<div class="form-group">
+			<label for="new-actor-birth-date">Birth Date</label>
+			<input type="date" class="form-control" id="new-actor-birth-date" ng-model="newActor.birthDate">
+		</div>
+		<div class="form-group">
+			<label for="new-actor-gender">Gender</label>
+			<select name="gender" id="new-actor-gender" ng-model="newActor.gender">
+				<option value="F">Female</option>
+				<option value="M">Male</option>
+			</select>
+		</div>
+		<div class="form-group">
+			<label for="new-actor-img">Image URL</label>
+			<div class="input-group">
+				<input type="text" id="new-actor-img" class="form-control" ng-model="newActor.imgUrl">
+				<span class="input-group-btn">
+					<span class="btn btn-primary btn-file">
+						Browse&hellip; <input type="file" file-reader="newActor.imgUrl">
+					</span>
+				</span>
+			</div>
+		</div>
 
-	<button type="submit" class="btn btn-success pull-right" ng-disabled="form.$invalid">
-		<span class="glyphicon glyphicon-ok" aria-hidden="true" /> Save
-	</button>
-</form>
+		<button type="submit" class="btn btn-success pull-right" ng-disabled="form.$invalid">
+			<span class="glyphicon glyphicon-ok" aria-hidden="true" /> Save
+		</button>
+	</form>
+</main>
