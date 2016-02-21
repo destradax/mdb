@@ -10,6 +10,26 @@
 	</head>
 	<body ng-app="mdb">
 
+		<nav class="navbar navbar-default" ng-controller="NavbarController">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#/">MDB - Movie Database</a>
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-content" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div class="collapse navbar-collapse" id="navbar-collapse-content">
+					<ul class="nav navbar-nav">
+						<li ng-repeat="menu in menus" ng-class="{'active': isActive(menu)}">
+							<a ng-href="#{{menu.url}}"><span class="glyphicon" ng-class="menu.icon" ng-bind="' ' + menu.label"/></a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
 		<div class="container" ng-view></div>
 
 		<!-- bower:js -->
